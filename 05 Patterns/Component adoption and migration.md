@@ -3,7 +3,7 @@ title: "Component adoption and migration"
 type: pattern
 scope: product
 status: canonical
-last_reviewed: 2026-09-16
+last_reviewed: 2026-09-19
 tags: [pattern, migration]
 decision: [[ADR-010 Masters-first component adoption]]
 ---
@@ -11,6 +11,8 @@ decision: [[ADR-010 Masters-first component adoption]]
 # Component adoption and migration
 
 The Matcha Man file is being normalized through focused component-adoption passes.
+
+The same order applies to product code: correct shared primitives first, then their consumers. [[Product design philosophy#Opinionated defaults]] and accepted component specifications are the target behavior; a conventional platform pattern is not a substitute simply because it is easier to implement.
 
 ## Migration order
 
@@ -25,6 +27,8 @@ The Matcha Man file is being normalized through focused component-adoption passe
 Do not chase 100% adoption at the cost of semantics or component integrity.
 
 If a valid usage cannot migrate because the primitive is too rigid, record an **architecture observation** rather than detaching components or creating local hacks.
+
+Product validation may motivate an improved system rule. Propose it through [[01 Rule strength and source of truth#Versioning and change records|existing governance]], then update the canonical specification and adoption guidance once accepted. Until acceptance, record the product-specific exception locally; after acceptance, future implementations use the new default. Keep acceptance, release publication, and adoption status distinct.
 
 ## Preserve previous migrations
 

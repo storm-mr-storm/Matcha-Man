@@ -3,7 +3,7 @@ title: "File manifest"
 type: index
 scope: product
 status: canonical
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-19
 tags: [index, manifest]
 ---
 
@@ -78,6 +78,8 @@ This manifest lists every Markdown note in the vault.
 - `06 Decisions/ADR-009 Observable agentic UI.md`
 - `06 Decisions/ADR-010 Masters-first component adoption.md`
 - `06 Decisions/ADR-011 Radius-aware table spacing.md`
+- `06 Decisions/ADR-012 Accessible Select listbox implementation.md`
+- `06 Decisions/ADR-013 Metric Card default anatomy.md`
 - `06 Decisions/CHANGELOG.md`
 - `06 Decisions/Decision log.md`
 - `06 Decisions/VERSION.md`

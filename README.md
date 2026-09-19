@@ -3,7 +3,7 @@ title: "Matcha Man product design system"
 type: index
 scope: product
 status: canonical
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-19
 tags: [matcha-man, design-system, index]
 llm_priority: highest
 ---
@@ -13,6 +13,8 @@ llm_priority: highest
 This vault is the semantic and decision-making companion to the **Matcha Man product design library** in Figma. It documents the product-side visual language, component rules, interaction semantics, rationale, and the decisions that shaped the system.
 
 The goal is not merely to describe what the components look like. The goal is to preserve enough **opinionated context** that a designer, engineer, Codex workflow, or LLM can infer how Matcha Man should behave when a new screen or component is created.
+
+Start with [[Product design philosophy#Opinionated defaults|Opinionated defaults]]: these are preferred implementation rules, not optional examples. Use the linked canonical component specifications unless a deliberate product exception is documented locally.
 
 ## What this vault covers
 
@@ -33,6 +35,7 @@ This vault intentionally excludes the separate **Matcha Man brand / marketing li
 
 - **Figma** is the implementation source of truth for the current visual/component artifact.
 - **This vault** is the reasoning, semantics, and decision source of truth.
+- Accepted decisions and canonical specifications govern implementation defaults, including accepted guidance still under Unreleased. Figma adoption is tracked separately; see [[01 Rule strength and source of truth]].
 - If the two disagree, treat that as **design-system drift that needs review**. Do not silently invent a reconciliation.
 
 ## Governance

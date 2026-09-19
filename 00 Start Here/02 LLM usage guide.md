@@ -3,7 +3,7 @@ title: "LLM usage guide"
 type: llm-guide
 scope: product
 status: canonical
-last_reviewed: 2026-09-16
+last_reviewed: 2026-09-19
 tags: [llm, governance]
 llm_priority: highest
 ---
@@ -17,16 +17,18 @@ This vault is designed to be useful as retrieval context for an LLM.
 When generating or reviewing Matcha Man product UI:
 
 1. Identify the component or pattern being used.
-2. Retrieve the relevant foundation/component note.
+2. Read [[Product design philosophy#Opinionated defaults]], then retrieve the relevant foundation/component note and linked accepted decision.
 3. Prefer existing primitives and compositions before proposing a new component.
 4. Preserve semantic distinctions even when two patterns look visually similar.
-5. Treat MUST/DO NOT statements as constraints.
+5. Treat MUST/DO NOT statements as constraints and documented geometry, spacing, anatomy, and behavior as the implementation defaults—not optional examples.
 6. Treat examples as demonstrations, not as hard-coded product content.
 7. Use robot-café examples only when a concrete example is helpful; documentation language should remain generic and professional.
 
 ## Important reasoning rule
 
 Do not infer a new system rule from a single screenshot or one-off specimen. Repeated rules documented here take precedence over incidental composition details.
+
+**Implementation requirement:** Do not substitute conventional platform defaults merely because they are easier to generate. Accepted Unreleased guidance is canonical; implementation evidence does not need to be copied verbatim. If a product must diverge, document the requirement, affected canonical rule, and local exception while preserving the canonical component. Do not turn an undocumented local workaround into a system default.
 
 ## Good model output
 

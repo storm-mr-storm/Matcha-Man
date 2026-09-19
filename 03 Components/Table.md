@@ -3,7 +3,7 @@ title: "Table"
 type: component
 scope: product
 status: canonical
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-19
 tags: [component, table]
 decision: "[[ADR-011 Radius-aware table spacing]]"
 version: v0.1.0
@@ -15,6 +15,8 @@ llm_priority: high
 **Figma page:** 22 — Table
 
 Table is for columnar data with headers and aligned fields. Data tables use this component; there is no separate Data Table specification.
+
+**Implementation requirement:** Use the geometry, spacing, and boundary ownership below by default in every Matcha Man implementation. This is the accepted Table specification, not a product-specific example. Document deliberate product exceptions locally; see [[Product design philosophy#Opinionated defaults]].
 
 ## Primitives
 
@@ -48,9 +50,11 @@ Reuse existing card-radius, card-padding, and spacing primitives for these roles
 
 ### Core principle
 
-> Large-radius table shells should preserve normal internal table density. Additional spacing is applied only where content approaches the rounded outer boundary.
+> Matcha Man tables preserve efficient interior density while providing additional clearance only where content approaches the rounded shell.
 
 > Radius changes edge clearance, not the density of the entire table.
+
+This applies the system-wide rule in [[Shape and geometry]] and the boundary/relationship distinction in [[Spacing and layout]].
 
 DO NOT reduce the 40px radius to solve table layout problems, or give every row boundary padding.
 

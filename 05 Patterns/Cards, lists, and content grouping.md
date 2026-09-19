@@ -3,7 +3,7 @@ title: "Cards, lists, and content grouping"
 type: pattern
 scope: product
 status: canonical
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-19
 tags: [pattern, card, list]
 ---
 
@@ -20,6 +20,10 @@ For columnar data, follow the [[Table]] composition: the shell retains Card geom
 ## List
 
 Repeated sibling rows; owns row anatomy, states, and dividers; no default surrounding surface.
+
+For an unpadded major shell, the header and direct rows each own the same 24px horizontal inset. Keep dense row spacing inside that boundary; a 16px list-item default must not move row content left of the heading. Standard padded Cards already supply the inset.
+
+Nested panels follow **shell → 24px → panel → 16px → content**. Their panel edges align to the parent content axis, while their content deliberately starts a new one. Do not add 24px inside every nested surface. See [[Spacing and layout#Surface hierarchy]].
 
 ## Preferred composition
 

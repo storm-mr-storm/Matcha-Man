@@ -3,7 +3,7 @@ title: "Design review checklist"
 type: llm-checklist
 scope: product
 status: canonical
-last_reviewed: 2026-09-16
+last_reviewed: 2026-09-19
 tags: [llm, checklist]
 ---
 
@@ -31,6 +31,16 @@ Use this checklist when reviewing a Matcha Man screen or component.
 - Correct radius family?
 - Relationship-based spacing?
 - No unnecessary shadows/glows/rails?
+
+## Opinionated defaults
+
+- Are the rules in [[Product design philosophy#Opinionated defaults]] applied, with deliberate product exceptions documented locally?
+- Do major Card surfaces retain 40px radius and 24px boundary clearance, with 16px nested padding, 12px dense internal spacing, and 4–8px related-content gaps as appropriate?
+- Do direct siblings share a primary content axis, and is each inset owned only once? See [[Spacing and layout]].
+- Does [[Table]] add clearance at exposed rounded boundaries while retaining normal interior density?
+- Does [[Select]] include an accessible designed listbox, 16px chevron edge clearance, rounded menu/options, and intentional interaction states?
+- Does [[Metric]] omit decorative top-right icons while preserving meaningful delta, sparkline, comparison, and semantic content?
+- Are accepted defaults kept distinct from release publication and product/Figma adoption status?
 
 ## Theme and responsive
 

@@ -3,7 +3,7 @@ title: "List"
 type: component
 scope: product
 status: canonical
-last_reviewed: 2026-09-16
+last_reviewed: 2026-09-19
 tags: [component, list]
 llm_priority: high
 ---
@@ -21,12 +21,20 @@ Vertical layout, no default surface/radius/padding. The containing [[Card]] owns
 ## List Item
 
 - Minimum height: 56px
-- Horizontal padding: 16px
+- Internal horizontal padding: 16px where the row owns a nested/internal boundary; follow the shell rules below when a row directly meets a major surface
 - Vertical padding: 12px
 - Leading → Content gap: ~12px
 - Primary → Supporting gap: ~4px
 - At least ~16px between Content and Trailing
 - Fill width, Hug height
+
+### Shell alignment
+
+Direct rows in an unpadded 40px [[Card]] shell use **24px left/right clearance**, aligned with section headings and footer/action regions. Retain the normal compact 12px vertical padding independently. Review rows may use 16px vertical padding without changing the horizontal axis.
+
+Those block-padding values govern interior density. At the exposed top/bottom shell boundary, the first/last owning region supplies 24px clearance; an existing heading/footer band may own it instead. Do not duplicate that spacing on the adjacent row. These are system defaults, not a Precision OS exception.
+
+When the Card already supplies 24px padding, do not add a second shell inset to unframed rows. A nested bordered/filled surface instead uses **16px internally** while respecting its parent's 24px clearance. Plain wrappers and horizontal dividers do not create nested surfaces. See [[Spacing and layout#Surface hierarchy]] for ownership and [[ADR-011 Radius-aware table spacing]] for the accepted system rule.
 
 ## States
 

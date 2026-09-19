@@ -3,7 +3,7 @@ title: "System map"
 type: index
 scope: product
 status: canonical
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-19
 tags: [index, navigation]
 llm_priority: high
 ---
@@ -15,6 +15,7 @@ Use this note as the table of contents for the product system.
 ## Principles
 
 - [[Product design philosophy]]
+- [[Product design philosophy#Opinionated defaults|Opinionated defaults]] — system-level implementation requirements and links
 - [[Product vs brand boundary]]
 - [[Agentic UI principles]]
 - [[Content and example language]]
@@ -79,6 +80,7 @@ Use this note as the table of contents for the product system.
 
 ## Governance
 
+- [[01 Rule strength and source of truth]] — precedence, exceptions, and versioning
 - [[06 Decisions/VERSION|VERSION]] — current release
 - [[06 Decisions/CHANGELOG|CHANGELOG]] — release history
 - [[Decision log]] — accepted decisions

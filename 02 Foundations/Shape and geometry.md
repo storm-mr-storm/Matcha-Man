@@ -3,7 +3,7 @@ title: "Shape and geometry"
 type: foundation
 scope: product
 status: canonical
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-19
 tags: [foundation, shape]
 decision: [[ADR-005 Card geometry and soft shape hierarchy]]
 ---
@@ -34,3 +34,9 @@ True capsules are valid for controls where the metaphor supports it, including T
 ## Rule
 
 DO NOT normalize every component to one radius. Geometry should communicate component family and scale.
+
+Large-radius geometry is a defining part of Matcha Man's visual personality and should not be reduced simply because conventional components are easier to lay out with smaller radii. Preserve the **40px** Card/major-shell radius and solve layout through boundary clearance.
+
+> Radius changes edge clearance, not the density of the entire component.
+
+Use [[Spacing and layout#Surface hierarchy]] for boundary ownership and [[Table]] for exposed row edges. This does not turn every rounded component into a 40px Card: controls, menus, and other families retain their documented geometry. See [[Product design philosophy#Opinionated defaults]] and [[ADR-011 Radius-aware table spacing]].

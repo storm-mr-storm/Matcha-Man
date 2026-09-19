@@ -3,7 +3,7 @@ title: "Rule strength and source of truth"
 type: governance
 scope: product
 status: canonical
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-19
 tags: [governance, rules]
 llm_priority: highest
 ---
@@ -11,6 +11,8 @@ llm_priority: highest
 # Rule strength and source of truth
 
 Matcha Man is intentionally opinionated. The system should be interpreted as a set of defaults with clear semantics, not as a bag of visual ingredients.
+
+[[Product design philosophy#Opinionated defaults|Opinionated defaults]] is the concise system-level index. Documented geometry, spacing, anatomy, behavior, and composition are implementation defaults for people and agents. A justified product exception must be documented locally and does not silently amend the canonical specification.
 
 ## Precedence when instructions conflict
 
@@ -54,3 +56,5 @@ Versions use **MAJOR.MINOR.PATCH**, interpreted for the design system:
 The initial tracked release is **v0.1.0**. Matcha Man and its accepted decision history predate release tracking; do not fabricate earlier releases or reassign historical decisions to invented versions.
 
 For a meaningful change, update the canonical specification, add the next sequential ADR to [[Decision log]], and record the change under Unreleased. When releasing, move that entry into a dated release and update [[06 Decisions/VERSION|VERSION]] in the same pass. Preserve earlier accepted records; explain any superseded rule in the new ADR. Record implementation/Figma adoption separately from acceptance of the specification.
+
+Accepted guidance is canonical immediately. **Unreleased** describes release packaging, not optionality; adoption in every product or Figma master is a separate status. Dated amendments to an existing decision may clarify or extend the same accepted rule while retaining its original decision and release history, as recorded for [[ADR-011 Radius-aware table spacing]] and [[ADR-012 Accessible Select listbox implementation]].

@@ -3,7 +3,7 @@ title: "Matcha Man canonical context"
 type: llm-context
 scope: product
 status: canonical
-last_reviewed: 2026-09-18
+last_reviewed: 2026-09-19
 tags: [llm, canonical]
 llm_priority: highest
 ---
@@ -11,6 +11,8 @@ llm_priority: highest
 # Matcha Man canonical context
 
 This is the compressed canonical brief for the Matcha Man **product** design system.
+
+**Implementation requirement:** These are opinionated defaults, not optional examples. Use [[Product design philosophy#Opinionated defaults]] and the relevant canonical specifications when generating or refactoring UI. Do not substitute conventional platform defaults for convenience. Preserve the canonical component and document deliberate product-specific exceptions locally. Accepted Unreleased guidance applies now; release publication and implementation adoption are separate.
 
 ## Character
 
@@ -28,9 +30,13 @@ Use primitives → semantic Theme aliases → components. Matcha positive `#9DAF
 
 60% smoothing where applicable. Checkbox 6px; badge/tooltip 8px; filter chip 12px; button/input/select 16px; Card and Modal 40px. Circles remain true circles. Toggle/progress tracks may be capsules.
 
+Large Card/surface radius is intentional: do not shrink it to accommodate conventional layouts. Radius changes edge clearance, not the density of the entire component. See [[Shape and geometry]].
+
 ## Spacing
 
 Relationship-based rhythm: ~8 tight, ~16 standard, ~24 major. Components own internal spacing; parents own external spacing and width.
+
+Canonical hierarchy: **24px major boundary / 16px nested surface / 12px dense internal / 4–8px relational spacing**. Major Card shells use 24px physical edge clearance; nested bordered/filled panels respect that inset and use 16px internally; dense/table cells use 12px internal inline padding. Exposed top/bottom regions own boundary clearance while interior rows keep component-specific density. Direct siblings share a primary content axis; nested panels deliberately establish a new one. Apply each inset once. Surface padding describes a physical boundary; internal spacing describes content relationships. Other families retain explicit component rules, such as Modal padding and Select popup padding. See [[Spacing and layout#Surface hierarchy]].
 
 ## Icons
 
@@ -40,7 +46,7 @@ Local `Icon` component from Lucide. Canonical names. 24×24 source, 2px round st
 
 - Button: 40/48/56 heights; Primary/Secondary/Tertiary/Destructive.
 - Text Input: 50/58/66 heights; persistent internal label.
-- Select: 58px; one hidden predefined choice; Select Option for menu rows.
+- Select: 58px height; 16px trigger/menu radius and chevron inset; 8px menu padding/offset; custom listbox with 8px-radius, 16x/12y options (48px minimum). Chevron swaps down/up. Optional internal form label; value-only filters keep an accessible name. Native OS popups are not faithful implementations. See [[Select]] and [[ADR-012 Accessible Select listbox implementation]] (Unreleased MINOR candidate).
 - Checkbox: 20×20, 6px radius; indeterminate is usually group-derived.
 - Radio: 20×20 with 8px dot.
 - Toggle: 44×24 track, 18px thumb.
@@ -55,8 +61,8 @@ Local `Icon` component from Lucide. Canonical names. 24×24 source, 2px round st
 - Feedback Banner: 16px radius/padding; semantic surface + icon; no left rail; small transparent dismiss X.
 - Modal: 40px radius, ~32px padding, ~440–480 desktop width.
 - Menu: 16px surface radius; 44px items; commands only.
-- List: 56px min rows, 16x/12y padding; repeated content entities.
-- Metric: direction and tone are separate.
+- List: 56px min rows, 12px compact vertical padding; repeated content entities. Direct rows against a 40px shell use 24px horizontal clearance; 16px belongs to internal/nested spacing. Do not duplicate padding already owned by a parent.
+- Metric: direction and tone are separate. Standard cards use label, value, support, and optional metric-specific content; no decorative top-right icon slot or icon added to fill empty space. Preserve meaningful delta arrows, sparklines, comparison values, and agentic context. A future corner control/semantic indicator requires separately defined anatomy. See [[Metric]] and [[ADR-013 Metric Card default anatomy]].
 - Search: 58px, no persistent internal label.
 - Filter chip: 36px, 12px radius; neutral applied constraints.
 - Date/Time fields: 58px, 16px radius.
@@ -89,3 +95,5 @@ Documentation prose is generic. Examples use the autonomous robot café. Core ro
 Prefer existing primitives and composition. Do not create variants for parent layout decisions. Light/Dark and Desktop/Mobile are independent. When Figma and the vault conflict, flag drift rather than guessing.
 
 Current tracked specification: **v0.1.0**; see [[06 Decisions/VERSION|VERSION]], [[06 Decisions/CHANGELOG|CHANGELOG]], and [[Decision log]]. Existing ADR history is retained; formal version tracking begins on 2026-09-18. Radius changes edge clearance, not the density of the entire table. Figma adoption of ADR-011 remains to be verified separately.
+
+The 2026-09-19 canonical-defaults pass amends ADR-011 and ADR-012 and accepts ADR-013. It is tracked under Unreleased as a **MINOR candidate**, with v0.1.0 unchanged. The principles index states what to follow; component notes specify how; decisions explain why; the changelog records when.
